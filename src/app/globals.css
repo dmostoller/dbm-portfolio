@@ -124,3 +124,121 @@ body {
 .animate-particle {
   animation: particle 2s infinite;
 }
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(var(--x-offset), var(--y-offset)); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.party-emoji {
+  position: absolute;
+  animation: float 3s infinite ease-in-out;
+  opacity: 0;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes pulse {
+  from { opacity: 0.4; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.party-particle {
+  position: absolute;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes strobe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.party-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(45deg, #000 25%, transparent 25%),
+              linear-gradient(-45deg, #000 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #000 75%),
+              linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 20px 20px;
+  animation: strobe 0.5s infinite;
+  opacity: 0.1;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+.party-char {
+  position: absolute;
+  font-family: 'DOS', monospace;
+  animation: colorCycle 2s infinite, bounce 1s infinite alternate;
+}
+
+.disco-ball-line {
+  font-family: monospace;
+  text-align: center;
+  line-height: 1;
+  animation: colorCycle 4s infinite, spin3D 4s linear infinite;
+  text-shadow: 0 0 5px currentColor;
+  white-space: pre;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.disco-light {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  animation: strobe 0.5s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes colorCycle {
+  0% { color: #FF00FF; }
+  33% { color: #00FFFF; }
+  66% { color: #FFFF00; }
+  100% { color: #FF00FF; }
+}
+
+@keyframes strobe {
+  0% { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}

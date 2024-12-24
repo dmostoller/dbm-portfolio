@@ -7,6 +7,87 @@ interface CommandPromptProps {
   onCommand: (command: string) => void;
 }
 
+const DiscoBall = () => {
+  const ballPattern = [
+    '    ▄████▄    ',
+    '  ██▒▒▒▒▒▒██  ',
+    '██▒▒▒▒▒▒▒▒▒▒██',
+    '██▒▓▒▒▒▒▒▓▒▒██',
+    '██▒▒▒▓▓▓▒▒▒▒██',
+    '  ██▒▒▒▒▒▒██  ',
+    '    ██████    ',
+    '              ',
+  ];
+
+  return (
+    <div className="absolute left-1/2 top-20 -translate-x-1/2">
+      {ballPattern.map((line, i) => (
+        <pre key={i} className="disco-ball-line">
+          {line}
+        </pre>
+      ))}
+      <div className="disco-light" />
+    </div>
+  );
+};
+
+const PartyMode = ({ onComplete }: { onComplete: () => void }) => {
+  const [chars, setChars] = useState<Array<{
+    id: number;
+    char: string;
+    x: number;
+    y: number;
+  }>>([]);
+
+
+  useEffect(() => {
+    const partyChars = ['▀', '▄', '█', '░', '▒', '▓', '■'];
+    const interval = setInterval(() => {
+      setChars(current => {
+        if (current.length > 40) current.shift();
+        return [...current, {
+          id: Math.random(),
+          char: partyChars[Math.floor(Math.random() * partyChars.length)],
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+        }];
+      });
+    }, 100);
+
+    const timer = setTimeout(() => {
+      clearInterval(interval);
+      onComplete();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timer);
+    };
+  }, [onComplete]);
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black">
+      <div className="party-overlay" />
+      <div className="scanlines" />
+      <div className="disco-ball absolute left-1/2 top-1/4 -translate-x-1/2">
+      <DiscoBall />
+      </div>
+      {chars.map(({ id, char, x, y }) => (
+        <div
+          key={id}
+          className="party-char"
+          style={{
+            left: `${x}%`,
+            top: `${y}%`
+          }}
+        >
+          {char}
+        </div>
+      ))}
+    </div>
+  );
+};
+
 function MatrixRain() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -121,7 +202,7 @@ const EASTER_EGGS = {
   },
   party: {
     command: 'party',
-    response: '🎉 🎈 🎊 PARTY TIME! 🎵 💃 🕺'
+    response: () => '🎉 PARTY TIME! 🎉'
   }
 };
 
@@ -133,6 +214,7 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const [showMatrix, setShowMatrix] = useState(false);
+  const [showParty, setShowParty] = useState(false);
 
   const handleCommand = (cmd: string) => {
     const command = cmd.toLowerCase().trim();
@@ -142,6 +224,15 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
     setShowMatrix(true);
     setTimeout(() => setShowMatrix(false), 5000);
     onCommand(EASTER_EGGS.matrix.response());
+    setInput('');
+    setHistoryIndex(-1);
+    return;
+  }
+
+  if (command === 'party') {
+    setShowParty(true);
+    setTimeout(() => setShowParty(false), 5000);
+    onCommand(EASTER_EGGS.party.response());
     setInput('');
     setHistoryIndex(-1);
     return;
@@ -235,6 +326,7 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
   return (
     <>
     {showMatrix && <MatrixRain />}
+    {showParty && <PartyMode onComplete={() => setShowParty(false)} />}
     <div className="flex items-center font-dos relative">
       <span>C:\&gt;</span>
       <input
@@ -259,3 +351,4 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
   </>
   );
 }
+
