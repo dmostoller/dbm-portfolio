@@ -69,8 +69,7 @@ const SocialLinks = () => {
   if (isMobile) {
     return (
       <Drawer.Root>
-        <Drawer.Trigger className="fixed bottom-10 left-0 right-0 h-2 bg-[var(--theme-bg)]">
-          {/* <div className="w-12 h-2 mx-auto bg-[var(--terminal-color)] rounded-full" /> */}
+        <Drawer.Trigger className="fixed bottom-10 left-0 right-0 h-2">
           <button 
             className="px-4 py-2 text-sm font-semibold bg-[var(--button-bg)] font-dos"
           >
