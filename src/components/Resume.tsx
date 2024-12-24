@@ -8,7 +8,7 @@ const Resume: FC = () => {
   };
 
   return (
-    <div className="bg-terminal-black font-dos min-h-screen max-w-5xl mx-auto p-4">
+    <div className="bg-terminal-color font-dos min-h-screen max-w-5xl mx-auto p-4">
       <div className="text-center">
         <div className="ascii-border mb-4 hidden md:block">
           ╔══════════════════════════════════════╗ 
@@ -19,12 +19,12 @@ const Resume: FC = () => {
 
       <div className="space-y-8 px-6">
         <div className="mb-4">
-          <div className="text-terminal-white mb-4">C:\{'>'}Select viewing option:</div>
+          <div className="mb-4">C:\{'>'}Select viewing option:</div>
           
           <div className="mb-4">
             <button 
               onClick={openResume}
-              className="inline-block px-4 py-2 hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              className="inline-block px-4 py-2 hover:bg-[var(--button-bg)] hover:text-terminal-color"
             >
               [1] VIEW IN BROWSER
             </button>
@@ -34,7 +34,7 @@ const Resume: FC = () => {
             <a 
               href="/resume.pdf" 
               download
-              className="inline-block px-4 py-2 hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              className="inline-block px-4 py-2 hover:bg-[var(--button-bg)] hover:text-terminal-color"
             >
               [2] DOWNLOAD PDF
             </a>

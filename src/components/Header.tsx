@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   return (
-    <header className="fixed top-0 left-0 right-0 bg-terminal-black z-50 py-4">
+  <header className="fixed top-0 left-0 right-0 bg-[var(--theme-light-bg)] dark:bg-[var(--theme-dark-bg)] z-50 py-4 border-b border-[var(--terminal-color)]">
       <div className="max-w-screen-2xl mx-auto text-center font-dos">
         <div className="ascii-border mb-4 text-sm sm:text-md md:text-base lg:text-xl xl:text-xl">
                     <div className="hidden xl:block">
@@ -31,10 +31,10 @@ const Header = () => {
             ╚═══════════════╝
           </div>
           <div className="block md:hidden">
-            ╔═╗
+            
             ║  DAVID MOSTOLLER ║
             ║ SOFTWARE ENGINEER ║
-            ╚═╝
+            
           </div>
         </div>
 
@@ -42,7 +42,7 @@ const Header = () => {
           <Link 
             href="/" 
             className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/" ? "bg-[var(--terminal-color)] text-terminal-black" : "hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              pathname === "/" ? "bg-[var(--button-bg)]" : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
             [HOME.EXE]
@@ -50,7 +50,7 @@ const Header = () => {
           <Link 
             href="/about" 
             className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/about" ? "bg-[var(--terminal-color)] text-terminal-black" : "hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              pathname === "/about" ? "bg-[var(--button-bg)]" : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
             [ABOUT.TXT]
@@ -58,7 +58,7 @@ const Header = () => {
           <Link 
             href="/blog" 
             className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/blog" ? "bg-[var(--terminal-color)] text-terminal-black" : "hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              pathname === "/blog" ? "bg-[var(--button-bg)]" : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
             [BLOG.TXT]
@@ -66,7 +66,7 @@ const Header = () => {
           <Link 
             href="/projects" 
             className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/projects" ? "bg-[var(--terminal-color)] text-terminal-black" : "hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              pathname === "/projects" ? "bg-[var(--button-bg)]" : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
             [PROJECTS.DIR]
@@ -74,7 +74,7 @@ const Header = () => {
           <Link 
             href="/resume" 
             className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/resume" ? "bg-[var(--terminal-color)] text-terminal-black" : "hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+              pathname === "/resume" ? "bg-[var(--button-bg)]" : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
             [RESUME.PDF]

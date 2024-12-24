@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-terminal-black font-dos min-h-screen max-w-3xl mx-auto p-4">
+    <main className="bg-terminal-color font-dos min-h-screen max-w-3xl mx-auto p-4">
       <div className="text-center">
               <RocketAnimation />
         {/* <pre className="ascii-border mb-4 hidden lg:block">

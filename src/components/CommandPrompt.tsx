@@ -83,8 +83,8 @@ const HELP_TEXT =
 '    clear            - Clear screen\n' +
 '    open [link]      - Open external link (github, linkedin, medium)\n' +
 '    download resume  - Download resume PDF\n' +
-'    theme [green|amber|blue] - Change terminal theme\n' +
-'    matrix           - Activate Matrix rain\n' +
+'    theme [default|green|amber|blue] - Change terminal theme\n' +
+'    matrix           - Activate Matrix rain\n\n' +
 // '    exit             - Return to home\n\n' +
 'Examples:\n\n' +
 '    cd about         - Go to about page\n' +
@@ -149,11 +149,11 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
 
   if (command.startsWith('theme ')) {
     const theme = command.split(' ')[1];
-    if (['green', 'amber', 'blue'].includes(theme)) {
+    if (['default', 'green', 'amber', 'blue'].includes(theme)) {
       setTheme(theme);
       onCommand(`Theme changed to ${theme}`);
     } else {
-      onCommand('Available themes: green, amber, blue');
+      onCommand('Available themes: default, green, amber, blue');
     }
     setInput('');
     setHistoryIndex(-1);

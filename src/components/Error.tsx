@@ -10,7 +10,7 @@ const Error: FC<ErrorProps> = ({
   code = 'ERR' 
 }) => {
   return (
-    <div className="min-h-96 flex items-center justify-center bg-terminal-black p-4">
+    <div className="min-h-96 flex items-center justify-center bg-terminal-color p-4">
       <div className="text-center">
         <div className="ascii-border mb-4">
           ╔══════════════════════════════╗

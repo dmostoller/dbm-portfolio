@@ -20,15 +20,15 @@ const SocialLinks = () => {
           href="https://github.com/dmostoller" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="hover:bg-[var(--terminal-color)] hover:text-terminal-black text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
           [GITHUB.COM]
         </a>
         <a 
-          href="https://linkedin.com/in/davidmostoller" 
+          href="https://linkedin.com/in/david-mostoller" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="hover:bg-[var(--terminal-color)] hover:text-terminal-black text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
           [LINKEDIN.COM]
         </a>
@@ -36,7 +36,7 @@ const SocialLinks = () => {
           href="https://medium.com/@dmostoller" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="hover:bg-[var(--terminal-color)] hover:text-terminal-black text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
           [MEDIUM.COM]
         </a>
@@ -44,7 +44,7 @@ const SocialLinks = () => {
           href="https://bsky.app/profile/davemostoller.bsky.social" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="hover:bg-[var(--terminal-color)] hover:text-terminal-black text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
           [BLUESKY.APP]
         </a>
@@ -52,7 +52,7 @@ const SocialLinks = () => {
           href="https://calendly.com/dmostoller/15-minute-coffee-virtual-chat" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="hover:bg-[var(--terminal-color)] hover:text-terminal-black text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
           [CALENDLY.COM]
         </a>
@@ -77,7 +77,7 @@ const SocialLinks = () => {
   }
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-terminal-black border-t border-[var(--terminal-color)] z-10">
+  <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-light-bg)] dark:bg-[var(--theme-dark-bg)] border-t border-[var(--terminal-color)] z-10">
       <SocialLinksContent />
     </footer>
   );

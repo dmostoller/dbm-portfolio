@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 
 const ProjectList = () => {
   return (
-    <div className="bg-terminal-black font-dos max-w-5xl mx-auto p-4">
+    <div className="bg-terminal-color font-dos max-w-5xl mx-auto p-4">
       <div className="ascii-border mb-4 hidden md:block">
         ╔══════════════════════════════════════╗
         ║          PROJECT DIRECTORY           ║

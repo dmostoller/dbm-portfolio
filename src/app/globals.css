@@ -6,23 +6,59 @@
   --theme-green: #32cd32;
   --theme-amber: #ffb000;
   --theme-blue: #4169e1;
+  --theme-light-bg: #f8f8f8;
+  --theme-light-text: #000000;
+  --theme-dark-bg: #000000;
+  --theme-dark-text: #ffffff;
+  --theme-light-button: #e5e5e5;
+  --theme-dark-button: #2d2d2d;
+}
+
+/* System theme-aware default */
+[data-theme='default'] {
+  --terminal-color: var(--theme-light-text);
+  --button-bg: var(--theme-light-button);
+  background-color: var(--theme-light-bg);
+  color: var(--theme-light-text);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='default'] {
+    --terminal-color: var(--theme-dark-text);
+    --button-bg: var(--theme-dark-button);
+    background-color: var(--theme-dark-bg);
+    color: var(--theme-dark-text);
+  }
 }
 
 [data-theme='green'] {
   --terminal-color: var(--theme-green);
+  --button-bg: var(--theme-dark-button);
 }
 
 [data-theme='amber'] {
   --terminal-color: var(--theme-amber);
+  --button-bg: var(--theme-dark-button);
 }
 
 [data-theme='blue'] {
   --terminal-color: var(--theme-blue);
+  --button-bg: var(--theme-dark-button);
 }
 
 body {
-  background: #000000;
+  background: var(--theme-dark-bg);
   color: var(--terminal-color, var(--theme-green));
+}
+
+[data-theme='default'] body {
+  background: var(--theme-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='default'] body {
+    background: var(--theme-dark-bg);
+  }
 }
 
 .ascii-border {

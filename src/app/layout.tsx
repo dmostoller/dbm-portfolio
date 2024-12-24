@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="green">
+    <html lang="en" data-theme="default">
         <body className="bg-terminal text-terminal-text p-4 min-h-screen">
         <Header />
         <main className="mt-[100px] mb-[170px] pt-4 pb-4">

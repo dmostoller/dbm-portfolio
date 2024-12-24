@@ -48,8 +48,7 @@ const BlogFeed = () => {
         setFeedItems(feedData);
         setIsLoading(false);
       } catch (err) {
-        console.error("Feed error:", err);
-        setError("Failed to fetch blog feed");
+        setError("Failed to fetch blog feed" + err);
         setIsLoading(false);
       }
     };
@@ -61,7 +60,7 @@ const BlogFeed = () => {
   if (error) return <Error message={error} code="FEED_ERR" />;
 
     return (
-      <div className="bg-terminal-black font-dos min-h-screen max-w-5xl mx-auto p-4">
+      <div className="bg-terminal-color font-dos min-h-screen max-w-5xl mx-auto p-4">
         <div className="text-center">
           <div className="ascii-border mb-4 hidden md:block">
             ╔══════════════════════════════════════╗ 
@@ -76,13 +75,13 @@ const BlogFeed = () => {
               <div className="mb-2">
                 └─► {new Date(item.pubDate).toLocaleDateString()}
               </div>
-              <div className="text-terminal-white mb-4">{`C:\\>${item.title}`}</div>
+              <div className="mb-4">{`C:\\>${item.title}`}</div>
               <div className="mb-4 leading-relaxed">{item.description}</div>
               <a
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-4 py-2  hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+                className="inline-block px-4 py-2  hover:bg-[var(--button-bg)] hover:text-terminal-color"
               >
                 [READ MORE]
               </a>
@@ -96,7 +95,7 @@ const BlogFeed = () => {
             href="https://medium.com/@dmostoller"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-4 py-2  hover:bg-[var(--terminal-color)] hover:text-terminal-black"
+            className="inline-block px-4 py-2  hover:bg-[var(--button-bg)] hover:text-terminal-color"
           >
             [READ MORE ON MY MEDIUM PAGE]
           </a>

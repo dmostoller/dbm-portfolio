@@ -60,8 +60,8 @@ const PARTICLE_COUNT = 50;
 const RocketAnimation = () => {
   const [frameIndex, setFrameIndex] = useState(0);
   const [particles, setParticles] = useState<Array<{x: number, y: number, speed: number}>>([]);
-  const [playBeep] = useSound('/sounds/beep.mp3', { volume: 0.5 });
-  const [playLaunch] = useSound('/sounds/launch.mp3', { volume: 0.5 });
+  const [playBeep] = useSound('/sounds/beep.mp3', { volume: 0.1 });
+  const [playLaunch] = useSound('/sounds/launch.mp3', { volume: 0.1 });
 
   useEffect(() => {
     if (frameIndex >= FRAMES.length) return;
@@ -90,7 +90,6 @@ const RocketAnimation = () => {
       <pre className={`
         absolute font-mono text-lg
         transition-all duration-1000
-        ${frameIndex === FRAMES.length - 3 ? 'text-blue-500' : 'text-green-500'}
         ${frameIndex === FRAMES.length - 2 ? 'animate-ascend' : ''}
       `}>
         {FRAMES[frameIndex] || FRAMES[FRAMES.length]}

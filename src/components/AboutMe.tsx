@@ -7,7 +7,7 @@ const AboutMe: FC = () => {
   const [showBikePhoto, setShowBikePhoto] = useState(false);
 
   return (
-    <section className="max-w-5xl mx-auto p-4 bg-terminal-black font-dos">
+    <section className="max-w-5xl mx-auto p-4 bg-terminal-color font-dos">
       <div className="ascii-border mb-4 hidden md:block">
         ╔═══════════════════════════════════════╗
         ║           ABOUT.TXT                   ║
@@ -40,7 +40,7 @@ const AboutMe: FC = () => {
           <p className="leading-relaxed">
             In my free time you can catch me exploring Philly on my{' '}
             <span 
-              className="text-terminal-white cursor-pointer"
+              className="text-violet-500 cursor-pointer"
               onMouseEnter={() => setShowBikePhoto(true)}
               onMouseLeave={() => setShowBikePhoto(false)}
             >
