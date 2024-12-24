@@ -9,8 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        terminal: {
+          black: '#000000',
+          green: '#00ff00',
+          white: '#ffffff',
+          amber: '#ffb000',
+          blue: '#4169e1',
+          red: '#ff0000',
+        },
+      },
+      fontFamily: {
+        dos: ["DOS", "Courier New", "monospace"],
       },
     },
   },
