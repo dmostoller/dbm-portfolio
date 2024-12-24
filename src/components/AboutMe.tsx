@@ -8,12 +8,11 @@ const AboutMe: FC = () => {
 
   return (
     <section className="max-w-5xl mx-auto p-4 bg-terminal-black font-dos">
-      <div className="ascii-border mb-4">
+      <div className="ascii-border mb-4 hidden md:block">
         ╔═══════════════════════════════════════╗
         ║           ABOUT.TXT                   ║
         ╚═══════════════════════════════════════╝
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
         <div className="relative h-[450px] w-full">
