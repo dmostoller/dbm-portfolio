@@ -14,15 +14,15 @@ const SocialLinks = () => {
   }, []);
 
   const SocialLinksContent = () => (
-    <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl mx-auto p-2 sm:p-3 md:p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4">
+    <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto p-2 sm:p-3 md:p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
         <a 
           href="https://github.com/dmostoller" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
-          [GITHUB.COM]
+          [GITHUB]
         </a>
         <a 
           href="https://linkedin.com/in/david-mostoller" 
@@ -30,7 +30,7 @@ const SocialLinks = () => {
           rel="noopener noreferrer" 
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
-          [LINKEDIN.COM]
+          [LINKEDIN]
         </a>
         <a 
           href="https://medium.com/@dmostoller" 
@@ -38,7 +38,7 @@ const SocialLinks = () => {
           rel="noopener noreferrer" 
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
-          [MEDIUM.COM]
+          [MEDIUM]
         </a>
         <a 
           href="https://bsky.app/profile/davemostoller.bsky.social" 
@@ -46,7 +46,7 @@ const SocialLinks = () => {
           rel="noopener noreferrer" 
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
-          [BLUESKY.APP]
+          [BLUESKY]
         </a>
         <a 
           href="https://calendly.com/dmostoller/15-minute-coffee-virtual-chat" 
@@ -54,7 +54,13 @@ const SocialLinks = () => {
           rel="noopener noreferrer" 
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
         >
-          [CALENDLY.COM]
+          [CALENDLY]
+        </a>
+        <a 
+          href="mailto:dave.mostoller.dev@gmail.com"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-sm sm:text-base px-2 sm:px-4 py-1 sm:py-2 text-center border border-[var(--terminal-color)]"
+        >
+          [EMAIL]
         </a>
       </div>
     </div>
@@ -63,8 +69,8 @@ const SocialLinks = () => {
   if (isMobile) {
     return (
       <Drawer.Root>
-        <Drawer.Trigger className="fixed bottom-0 left-0 right-0 h-2 bg-terminal-black">
-          <div className="w-12 h-1 mx-auto bg-[var(--terminal-color)] rounded-full" />
+        <Drawer.Trigger className="fixed bottom-2 left-0 right-0 h-2 bg-terminal-black">
+          <div className="w-12 h-2 mx-auto bg-[var(--terminal-color)] rounded-full" />
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
@@ -77,7 +83,7 @@ const SocialLinks = () => {
   }
 
   return (
-  <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-light-bg)] dark:bg-[var(--theme-dark-bg)] border-t border-[var(--terminal-color)] z-10">
+  <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-bg)] border-t border-[var(--terminal-color)] z-10">
       <SocialLinksContent />
     </footer>
   );

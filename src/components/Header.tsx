@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   return (
-  <header className="fixed top-0 left-0 right-0 bg-[var(--theme-light-bg)] dark:bg-[var(--theme-dark-bg)] z-50 py-4 border-b border-[var(--terminal-color)]">
+  <header className="fixed top-0 left-0 right-0 bg-[var(--theme-bg)] z-50 py-4 border-b border-[var(--terminal-color)]">
       <div className="max-w-screen-2xl mx-auto text-center font-dos">
         <div className="ascii-border mb-4 text-sm sm:text-md md:text-base lg:text-xl xl:text-xl">
                     <div className="hidden xl:block">
