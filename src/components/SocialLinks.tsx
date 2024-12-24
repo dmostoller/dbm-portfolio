@@ -15,7 +15,7 @@ const SocialLinks = () => {
 
   const SocialLinksContent = () => (
     <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto p-2 sm:p-3 md:p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 font-dos">
         <a 
           href="https://github.com/dmostoller" 
           target="_blank" 
@@ -69,12 +69,18 @@ const SocialLinks = () => {
   if (isMobile) {
     return (
       <Drawer.Root>
-        <Drawer.Trigger className="fixed bottom-2 left-0 right-0 h-2 bg-terminal-black">
-          <div className="w-12 h-2 mx-auto bg-[var(--terminal-color)] rounded-full" />
+        <Drawer.Trigger className="fixed bottom-10 left-0 right-0 h-2 bg-[var(--theme-bg)]">
+          {/* <div className="w-12 h-2 mx-auto bg-[var(--terminal-color)] rounded-full" /> */}
+          <button 
+            className="px-4 py-2 text-sm font-semibold bg-[var(--button-bg)] font-dos"
+          >
+            Connect With Me
+          </button>
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-          <Drawer.Content className="bg-terminal-black fixed bottom-0 left-0 right-0 mt-24 h-fit rounded-t-[10px] border-t border-[var(--terminal-color)]">
+          <Drawer.Content className="bg-[var(--theme-bg)] fixed bottom-0 left-0 right-0 mt-24 h-fit rounded-t-[10px] border-t border-[var(--terminal-color)]">
+            <div className="w-12 h-2 mx-auto bg-[var(--terminal-color)] rounded-full" />
             <SocialLinksContent />
           </Drawer.Content>
         </Drawer.Portal>
