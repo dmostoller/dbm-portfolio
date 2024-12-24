@@ -42,12 +42,11 @@ The site will be available at http://localhost:3000
 
 ## 📝 Commands
 Try these commands in the terminal interface:
-
-help - Show available commands
-theme [color] - Change terminal theme
-dir - List projects
-cd [page] - Navigate to different sections
-matrix - Trigger Matrix animation
+- help - Show available commands
+- theme [color] - Change terminal theme
+- dir - List projects
+- cd [page] - Navigate to different sections
+- matrix - Trigger Matrix animation
 
 ## 🔗 Live Demo
 Visit davidmostoller.com to see the site in action.
