@@ -16,8 +16,8 @@ export const projects: Project[] = [
     description: "Transforming the way job seekers optimize their resumes with AI-powered analysis and insights.",
     stack: ["Next.js", "Typescript", "Redis", "AI", "Mammoth", "Formidible", "String Similarity", "Fuse.js"],
     links: {
-      demo: "https://wwww.airesumeanalyzer.com",
-      github: "https://github.com/dmostoller/ai-resume-analyzer",
+      demo: "https://www.airesumeanalyzer.com",
+      // github: "https://github.com/dmostoller/ai-resume-analyzer",
     },
   },
   {
