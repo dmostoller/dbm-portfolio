@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 import RocketAnimation from '@/components/RocketAnimation';
 
 const WELCOME_MESSAGE = `
-Welcome to David Mostoller's Portfolio
+Welcome to my portfolio
 Type 'help' for available commands
 `;
 
@@ -35,26 +35,7 @@ export default function Home() {
   return (
     <main className="bg-terminal-color font-dos min-h-screen max-w-3xl mx-auto p-4">
       <div className="text-center">
-              <RocketAnimation />
-        {/* <pre className="ascii-border mb-4 hidden lg:block">
-          {`
-░█▀▄░█▀█░█░█░▀█▀░█▀▄░░░█▄█░█▀█░█▀▀░▀█▀░█▀█░█░░░█░░░█▀▀░█▀▄
-░█░█░█▀█░▀▄▀░░█░░█░█░░░█░█░█░█░▀▀█░░█░░█░█░█░░░█░░░█▀▀░█▀▄
-░▀▀░░▀░▀░░▀░░▀▀▀░▀▀░░░░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀
-          `}
-        </pre>
-        <pre className="ascii-border mb-4 block lg:hidden">
-          {`
-░█▀▄░█▀█░█░█░▀█▀░█▀▄                
-░█░█░█▀█░▀▄▀░░█░░█░█                
-░▀▀░░▀░▀░░▀░░▀▀▀░▀▀░                
-░█▄█░█▀█░█▀▀░▀█▀░█▀█░█░░░█░░░█▀▀░█▀▄
-░█░█░█░█░▀▀█░░█░░█░█░█░░░█░░░█▀▀░█▀▄
-░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀
-          `}
-        </pre> */}
-
-
+        <RocketAnimation />
       </div>
 
       <div className="space-y-4 mb-8">
@@ -62,7 +43,6 @@ export default function Home() {
           <div key={i} className="font-dos whitespace-pre-wrap">{line}</div>
         ))}
       </div>
-
       <CommandPrompt onCommand={handleCommand} />
     </main>
   );

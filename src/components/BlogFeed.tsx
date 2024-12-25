@@ -68,7 +68,6 @@ const BlogFeed = () => {
             ╚══════════════════════════════════════╝
           </div>
         </div>
-  
         <div className="space-y-8 px-0 md:px-6">
           {feedItems.map((item, index) => (
             <div key={index} className="mb-8 pb-4 border-b border-[var(--terminal-color)]">
@@ -85,11 +84,9 @@ const BlogFeed = () => {
               >
                 [READ MORE]
               </a>
-
             </div>
           ))}
         </div>
-  
         <div className="mt-8 text-center">
           <a
             href="https://medium.com/@dmostoller"

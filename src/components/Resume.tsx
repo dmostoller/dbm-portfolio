@@ -16,7 +16,6 @@ const Resume: FC = () => {
           ╚══════════════════════════════════════╝
         </div>
       </div>
-
       <div className="space-y-8 px-6">
         <div className="mb-4">
           <div className="mb-4">C:\{'>'}Select viewing option:</div>

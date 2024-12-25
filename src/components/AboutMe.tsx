@@ -25,13 +25,11 @@ const AboutMe: FC = () => {
           />
         </div>
         <div className="p-4">
-              <h2 className="text-lg font-semibold">Education</h2>
-              <h3 className="text-md font-medium">Wesleyan University | Flatiron School</h3>
+            <h2 className="text-lg font-semibold">Education</h2>
+            <h3 className="text-md font-medium">Wesleyan University | Flatiron School</h3>
         </div>
         </div>
         <div className="space-y-4">
-          {/* <p className="mb-4">C:\{">"}TYPE PROFILE.TXT</p> */}
-          
           <p className="leading-relaxed">
             Full-stack software engineer specializing in modern web technologies
             and distributed systems. Currently building with TypeScript, React, Next.js,
@@ -47,14 +45,11 @@ const AboutMe: FC = () => {
               bike
             </span> or enjoying a good sci-fi book.
           </p>
-
           <p className="mt-6 mb-2">C:\{">"} DIR SKILLS</p>
-
         <section className="mb-12">
           <div className="grid gap-4">
           </div>
         </section>
-          
           <ul className="space-y-2 pl-4">
             <li className="flex items-center">► TypeScript/JavaScript</li>
             <li className="flex items-center">► React.js/Next.js</li>
@@ -67,8 +62,6 @@ const AboutMe: FC = () => {
             <li className="flex items-center">► Git/GitHub/Jest/Figma</li>
           </ul>
         </div>
-
-        
       </div>
     </section>
   );

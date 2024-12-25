@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" data-theme="default">
         <body className="bg-terminal text-terminal-text p-4 min-h-screen">
         <Header />
-        <main className="mt-[100px] mb-[170px] pt-4 pb-4">
+        <main className="mt-8 md:mt-[100px] mb-[170px] pt-4 pb-4">
           {children}
         </main>
         <SocialLinks />

@@ -166,6 +166,7 @@ const HELP_TEXT =
 '    download resume  - Download resume PDF\n' +
 '    theme [default|green|amber|blue] - Change terminal theme\n' +
 '    matrix           - Activate Matrix rain\n\n' +
+'    `??`             - Easter eggs\n\n' +
 // '    exit             - Return to home\n\n' +
 'Examples:\n\n' +
 '    cd about         - Go to about page\n' +
@@ -174,6 +175,24 @@ const HELP_TEXT =
 '    download resume  - Get PDF version\n' +
 '    theme amber      - Change terminal theme to amber\n';
 
+const MOBILE_HELP_TEXT = `
+[ COMMANDS ]
+dir       Projects list
+cd        about, blog, projects
+clear     Clear screen
+help      Show commands
+
+[ ACTIONS ]
+open      github, linkedin, medium
+download  Get resume PDF
+theme     default, green, amber, blue
+matrix    Matrix rain
+??        Easter eggs
+
+[ USE ]
+cd about
+open github
+theme amber`;
 
 const VALID_PATHS = ['about', 'blog', 'projects'];
 const VALID_LINKS: ExternalLinks = {
@@ -207,6 +226,7 @@ const EASTER_EGGS = {
 };
 
 export default function CommandPrompt({ onCommand }: CommandPromptProps) {
+  const [isMobile, setIsMobile] = useState(false);
   const { setTheme } = useTheme();
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([]);
@@ -215,6 +235,16 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
   const router = useRouter();
   const [showMatrix, setShowMatrix] = useState(false);
   const [showParty, setShowParty] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleCommand = (cmd: string) => {
     const command = cmd.toLowerCase().trim();
@@ -263,40 +293,40 @@ export default function CommandPrompt({ onCommand }: CommandPromptProps) {
     return;
   }
         
-    if (command === 'download resume') {
-      const link = document.createElement('a');
-      link.href = '/resume.pdf';
-      link.download = 'resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      onCommand('Downloading resume...');
-    } else if (command === 'help') {
-      onCommand(HELP_TEXT);
-    } else if (command.startsWith('cd ')) {
-      const path = command.split(' ')[1];
-      if (VALID_PATHS.includes(path)) {
-        router.push(`/${path}`);
-      } else {
-        onCommand(`Invalid path: ${path}`);
-      }
-    } else if (command.startsWith('open ')) {
-      const link = command.split(' ')[1] as ValidLinkKeys;
-      if (link in VALID_LINKS) {
-        window.open(VALID_LINKS[link], '_blank');
-        onCommand(`Opening ${link}...`);
-      } else {
-        onCommand(`Invalid link: ${link}`);
-      }
-    } else if (command === 'exit') {
-      router.push('/');
+  if (command === 'download resume') {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    onCommand('Downloading resume...');
+  } else if (command === 'help') {
+    onCommand(isMobile ? MOBILE_HELP_TEXT : HELP_TEXT);
+  } else if (command.startsWith('cd ')) {
+    const path = command.split(' ')[1];
+    if (VALID_PATHS.includes(path)) {
+      router.push(`/${path}`);
     } else {
-      onCommand(command);
+      onCommand(`Invalid path: ${path}`);
     }
-    
-    setInput('');
-    setHistoryIndex(-1);
-  };
+  } else if (command.startsWith('open ')) {
+    const link = command.split(' ')[1] as ValidLinkKeys;
+    if (link in VALID_LINKS) {
+      window.open(VALID_LINKS[link], '_blank');
+      onCommand(`Opening ${link}...`);
+    } else {
+      onCommand(`Invalid link: ${link}`);
+    }
+  } else if (command === 'exit') {
+    router.push('/');
+  } else {
+    onCommand(command);
+  }
+  
+  setInput('');
+  setHistoryIndex(-1);
+};
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && input.trim()) {
