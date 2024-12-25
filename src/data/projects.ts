@@ -30,15 +30,15 @@ export const projects: Project[] = [
       github: "https://github.com/dmostoller/philareact",
     },
   },
-  {
-    id: "type-network",
-    title: "TypeNetwork",
-    description: "The world's best fonts.",
-    stack: ["Next.js", "Typescript", "Django", "GraphQL", "Apollo", "Tachyons"],
-    links: {
-      demo: "https://typenetwork.com",
-    },
-  },
+  // {
+  //   id: "type-network",
+  //   title: "TypeNetwork",
+  //   description: "The world's best fonts.",
+  //   stack: ["Next.js", "Typescript", "Django", "GraphQL", "Apollo", "Tachyons"],
+  //   links: {
+  //     demo: "https://typenetwork.com",
+  //   },
+  // },
   {
     id: "srs",
     title: "South River Studios",
