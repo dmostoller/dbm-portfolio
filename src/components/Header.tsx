@@ -112,7 +112,7 @@ const Header = () => {
         <nav className="hidden md:flex flex-wrap justify-center gap-2 sm:gap-4 mt-4 px-2">
           <Link
             href="/"
-            className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
+            className={`px-2 sm:px-8 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/"
                 ? "bg-[var(--button-bg)]"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
@@ -122,7 +122,7 @@ const Header = () => {
           </Link>
           <Link
             href="/about"
-            className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
+            className={`px-2 sm:px-8 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/about"
                 ? "bg-[var(--button-bg)]"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
@@ -132,7 +132,7 @@ const Header = () => {
           </Link>
           <Link
             href="/blog"
-            className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
+            className={`px-2 sm:px-8 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/blog"
                 ? "bg-[var(--button-bg)]"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
@@ -142,7 +142,7 @@ const Header = () => {
           </Link>
           <Link
             href="/projects"
-            className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
+            className={`px-2 sm:px-8 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/projects"
                 ? "bg-[var(--button-bg)]"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
@@ -152,7 +152,7 @@ const Header = () => {
           </Link>
           <Link
             href="/resume"
-            className={`px-2 sm:px-4 py-1 sm:py-2 text-sm sm:text-base ${
+            className={`px-2 sm:px-8 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/resume"
                 ? "bg-[var(--button-bg)]"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
