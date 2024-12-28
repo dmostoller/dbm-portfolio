@@ -26,7 +26,7 @@ export const projects: Project[] = [
     description: "A browser extension that helps developers create more accessible web forms through real-time validation and suggestions.",
     stack: ["JavaScript", "Chrome Extensions API", "WCAG", "React", "TailwindCSS", "Vitest", "TypeScript", "Webpack"],
     links: {
-      demo: "https://chrome.google.com/webstore/detail/form-accessibility-validator",
+      demo: "https://fav-website.vercel.app/",
       github: "https://github.com/dmostoller/form-accessibility-validator-extension",
     },
   },
