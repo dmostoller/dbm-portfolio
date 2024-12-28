@@ -14,10 +14,20 @@ export const projects: Project[] = [
     id: "ai-resume-analyzer",
     title: "AI Resume Analyzer",
     description: "Transforming the way job seekers optimize their resumes with AI-powered analysis and insights.",
-    stack: ["Next.js", "Typescript", "Redis", "AI", "Mammoth", "Formidible", "String Similarity", "Fuse.js"],
+    stack: ["Next.js", "Typescript", "Redis", "AI", "Mammoth", "String Similarity", "Fuse.js", "TailwindCSS"],
     links: {
       demo: "https://www.airesumeanalyzer.com",
       // github: "https://github.com/dmostoller/ai-resume-analyzer",
+    },
+  },
+  {
+    id: "form-accessibility-validator",
+    title: "Form Accessibility Validator",
+    description: "A browser extension that helps developers create more accessible web forms through real-time validation and suggestions.",
+    stack: ["JavaScript", "Chrome Extensions API", "WCAG", "React", "TailwindCSS", "Vitest", "TypeScript", "Webpack"],
+    links: {
+      demo: "https://chrome.google.com/webstore/detail/form-accessibility-validator",
+      github: "https://github.com/dmostoller/form-accessibility-validator-extension",
     },
   },
   {

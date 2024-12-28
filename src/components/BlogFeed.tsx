@@ -63,9 +63,7 @@ const BlogFeed = () => {
       <div className="bg-terminal-color font-dos min-h-screen max-w-5xl mx-auto p-4">
         <div className="text-center">
           <div className="ascii-border mb-4 hidden md:block">
-            ╔══════════════════════════════════════╗ 
-            ║            BLOG DIRECTORY            ║
-            ╚══════════════════════════════════════╝
+            ║ BLOG DIRECTORY ║
           </div>
         </div>
         <div className="space-y-8 px-0 md:px-6">
