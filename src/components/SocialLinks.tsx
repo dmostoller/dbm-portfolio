@@ -15,12 +15,12 @@ const SocialLinks = () => {
 
   const SocialLinksContent = () => (
     <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto p-2 sm:p-3 md:p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 font-dos">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 font-dos">
         <a
           href="https://github.com/dmostoller"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [GITHUB]
         </a>
@@ -28,7 +28,7 @@ const SocialLinks = () => {
           href="https://linkedin.com/in/david-mostoller"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [LINKEDIN]
         </a>
@@ -36,7 +36,7 @@ const SocialLinks = () => {
           href="https://medium.com/@dmostoller"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [MEDIUM]
         </a>
@@ -44,7 +44,7 @@ const SocialLinks = () => {
           href="https://bsky.app/profile/davemostoller.bsky.social"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [BLUESKY]
         </a>
@@ -52,13 +52,13 @@ const SocialLinks = () => {
           href="https://calendly.com/dmostoller/15-minute-coffee-virtual-chat"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [CALENDLY]
         </a>
         <a
           href="mailto:dave.mostoller.dev@gmail.com"
-          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base px-2 sm:px-4 py-2 sm:py-2 text-center"
+          className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
           [EMAIL]
         </a>
@@ -90,7 +90,7 @@ const SocialLinks = () => {
   }
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-bg)] border-t border-[var(--terminal-color)] z-10">
+    <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-bg)] z-10">
       <SocialLinksContent />
     </footer>
   );
