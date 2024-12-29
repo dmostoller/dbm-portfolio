@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="bg-terminal text-terminal-text p-4 min-h-screen">
         <ParticleProvider>
           <Header />
-          <main className="mt-12 md:mt-32 mb-32 pt-4 pb-4">
+          <main className="mt-12 md:mt-16 lg:mt-32 mb-32 pt-4 pb-4">
             <ParticleRenderer />
             {children}
           </main>
