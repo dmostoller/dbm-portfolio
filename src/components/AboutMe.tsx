@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FC } from "react";
+import Email from "./Email";
 
 const AboutMe: FC = () => {
   const [showBikePhoto, setShowBikePhoto] = useState(false);
@@ -26,21 +27,43 @@ const AboutMe: FC = () => {
         </div>
         <div>
           <p className="leading-relaxed mb-6">
-            I&apos;m a full-stack software engineer specializing in modern web
-            technologies and distributed systems. Currently building with
-            TypeScript, React, Next.js, and Node.js. Background in audio
-            engineering and music technology.
+            I&apos;m a full-stack software engineer who believes that the design
+            of impactful and modern web technologies emerges from iterative,
+            team collaborations.
+          </p>
+          <p className="leading-relaxed mb-6">
+            I&apos;m currently building with TypeScript, React, Next.js, and
+            Node.js. I have a background in audio engineering and music
+            technology, and perform under the names{" "}
+            <a
+              href="https://superluminalpsy.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-violet-500"
+            >
+              Kabayun
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://superluminalpsy.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-violet-500"
+            >
+              Superluminal
+            </a>{" "}
+            in my free time.
           </p>
           <p className="leading-relaxed mb-12">
-            In my free time you can catch me exploring Philly on my{" "}
+            I also love to read sci-fi and ride my{" "}
             <span
               className="text-violet-500 cursor-pointer"
               onMouseEnter={() => setShowBikePhoto(true)}
               onMouseLeave={() => setShowBikePhoto(false)}
             >
-              bike
-            </span>{" "}
-            or enjoying a good sci-fi book.
+              bicycle
+            </span>
+            .
           </p>
           <p className="font-semibold mb-2">C:\{">"} DIR SKILLS</p>
           <ul className="space-y-2 pl-4">
@@ -60,6 +83,7 @@ const AboutMe: FC = () => {
           </div>
         </div>
       </div>
+      <Email />
     </section>
   );
 };

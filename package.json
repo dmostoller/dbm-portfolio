@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@vercel/analytics": "^1.4.1",
+    "formik": "^2.4.6",
     "lucide-react": "^0.469.0",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "rss-parser": "^3.13.0",
     "use-sound": "^4.0.3",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
