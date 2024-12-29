@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 import RocketAnimation from "@/components/RocketAnimation";
 
 const WELCOME_MESSAGE = `
-Welcome to my portfolio
+Welcome to my software engineering portfolio
 Type 'help' for available commands
 `;
 

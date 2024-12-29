@@ -82,7 +82,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; BLOG.TXT
+              C:\\&gt; BLOG.DIR
             </Link>
             <Link
               href="/projects"
@@ -120,21 +120,23 @@ const Header = () => {
         </div> */}
 
         <nav className="hidden lg:flex flex-wrap justify-between gap-4 px-2 max-w-screen-lg mx-auto">
-          <Image
-            src="/images/dm3.png"
-            alt="David Mostoller"
-            className="object-cover block dark:hidden"
-            height={32}
-            width={240}
-          />
-          <Image
-            src="/images/dm2.png"
-            alt="David Mostoller"
-            className="object-cover hidden dark:block"
-            height={32}
-            width={240}
-          />
-          <Link
+          <Link href="/">
+            <Image
+              src="/images/dm3.png"
+              alt="David Mostoller"
+              className="object-cover block dark:hidden"
+              height={32}
+              width={240}
+            />
+            <Image
+              src="/images/dm2.png"
+              alt="David Mostoller"
+              className="object-cover hidden dark:block"
+              height={32}
+              width={240}
+            />
+          </Link>
+          {/* <Link
             href="/"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/"
@@ -143,12 +145,12 @@ const Header = () => {
             }`}
           >
             [HOME]
-          </Link>
+          </Link> */}
           <Link
             href="/about"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/about"
-                ? "bg-[var(--button-bg)]"
+                ? "bg-[var(--button-bg)] font-bold"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
@@ -158,7 +160,7 @@ const Header = () => {
             href="/blog"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/blog"
-                ? "bg-[var(--button-bg)]"
+                ? "bg-[var(--button-bg)] font-bold"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
@@ -168,7 +170,7 @@ const Header = () => {
             href="/projects"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/projects"
-                ? "bg-[var(--button-bg)]"
+                ? "bg-[var(--button-bg)] font-bold"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >
@@ -178,7 +180,7 @@ const Header = () => {
             href="/resume"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
               pathname === "/resume"
-                ? "bg-[var(--button-bg)]"
+                ? "bg-[var(--button-bg)] font-bold"
                 : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
             }`}
           >

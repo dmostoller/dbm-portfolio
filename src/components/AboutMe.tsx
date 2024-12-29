@@ -8,9 +8,6 @@ const AboutMe: FC = () => {
 
   return (
     <section className="max-w-5xl mx-auto p-4 bg-terminal-color font-dos min-h-screen">
-      <div className="ascii-border mb-4 hidden md:block text-center text-lg font-bold">
-        ABOUT ME
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
           <div className="relative h-[450px] w-full">
@@ -28,12 +25,11 @@ const AboutMe: FC = () => {
           </div>
         </div>
         <div>
-          <h2 className="font-semibold block md:hidden">About Me</h2>
           <p className="leading-relaxed mb-6">
-            Full-stack software engineer specializing in modern web technologies
-            and distributed systems. Currently building with TypeScript, React,
-            Next.js, and Node.js. Background in audio engineering and music
-            technology.
+            I&apos;m a full-stack software engineer specializing in modern web
+            technologies and distributed systems. Currently building with
+            TypeScript, React, Next.js, and Node.js. Background in audio
+            engineering and music technology.
           </p>
           <p className="leading-relaxed mb-12">
             In my free time you can catch me exploring Philly on my{" "}

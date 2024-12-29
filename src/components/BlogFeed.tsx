@@ -61,8 +61,8 @@ const BlogFeed = () => {
 
   return (
     <div className="bg-terminal-color font-dos min-h-screen max-w-5xl mx-auto p-4">
-      <div className="text-center font-bold text-lg">
-        <div className="ascii-border mb-4">BLOG DIRECTORY</div>
+      <div className="text-left font-bold text-lg">
+        <div className="ascii-border mb-4">C:\\&gt; BLOG.DIRECTORY</div>
       </div>
       <div className="space-y-8 px-0 md:px-6">
         {feedItems.map((item, index) => (
