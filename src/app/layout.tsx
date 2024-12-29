@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" data-theme="default">
       <body className="bg-terminal text-terminal-text p-4 min-h-screen">
         <Header />
-        <main className="mt-12 md:mt-16mb-[170px] pt-4 pb-4">{children}</main>
+        <main className="mt-12 mb-24 pt-4 pb-4">{children}</main>
         <SocialLinks />
         <Analytics />
       </body>
