@@ -11,7 +11,9 @@ const Resume: FC = () => {
     <div className="bg-terminal-color font-dos min-h-screen max-w-5xl mx-auto p-4">
       <div className="space-y-8 px-6">
         <div className="mb-4">
-          <div className="mb-4">C:\{">"}Select viewing option:</div>
+          <div className="mb-4 text-[var(--theme-highlight)] font-semibold">
+            C:\{">"}Select viewing option:
+          </div>
 
           <div className="mb-4">
             <button

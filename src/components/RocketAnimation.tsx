@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import useSound from 'use-sound';
+import { useEffect, useState } from "react";
+import useSound from "use-sound";
 
 const FRAMES = [
-`
+  `
      /\\       
     /  \\      
    /====\\     
@@ -13,7 +13,7 @@ const FRAMES = [
  //|[  ]|\\\\   
 |||  ||  |||  
    [ T-3 ]    `,
-`
+  `
      /\\       
     /  \\      
    /====\\     
@@ -25,7 +25,7 @@ const FRAMES = [
 |||  ||  |||  
    [ T-2 ]    
     ~~~~~     `,
-`
+  `
      /\\       
     /  \\      
    /====\\     
@@ -38,7 +38,7 @@ const FRAMES = [
    [ T-1 ]    
    ~~~~~~~    
   ~~~~~~~~~   `,
-`
+  `
      /\\       
     /  \\      
    /====\\     
@@ -52,34 +52,25 @@ const FRAMES = [
    {####}     
   {######}    
  {########}   `,
- ``
+  ``,
 ];
-
-const PARTICLE_COUNT = 50;
 
 const RocketAnimation = () => {
   const [frameIndex, setFrameIndex] = useState(0);
-  const [particles, setParticles] = useState<Array<{x: number, y: number, speed: number}>>([]);
-  const [playBeep] = useSound('/sounds/beep.mp3', { volume: 0.1 });
-  const [playLaunch] = useSound('/sounds/launch.mp3', { volume: 0.1 });
+  const [playBeep] = useSound("/sounds/beep.mp3", { volume: 0.1 });
+  const [playLaunch] = useSound("/sounds/launch.mp3", { volume: 0.1 });
 
   useEffect(() => {
     if (frameIndex >= FRAMES.length) return;
 
     if (frameIndex === FRAMES.length - 2) {
       playLaunch();
-      // Initialize particles
-      setParticles(Array.from({length: PARTICLE_COUNT}, () => ({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        speed: 0.5 + Math.random() * 2
-      })));
     } else if (frameIndex < FRAMES.length - 2) {
       playBeep();
     }
 
     const timer = setInterval(() => {
-      setFrameIndex(prev => prev + 1);
+      setFrameIndex((prev) => prev + 1);
     }, 1000);
 
     return () => clearInterval(timer);
@@ -87,24 +78,15 @@ const RocketAnimation = () => {
 
   return (
     <div className="flex justify-center items-center min-h-[400px] perspective-1000">
-      <pre className={`
+      <pre
+        className={`
         absolute font-mono text-lg
         transition-all duration-1000
-        ${frameIndex === FRAMES.length - 2 ? 'animate-ascend' : ''}
-      `}>
+        ${frameIndex === FRAMES.length - 2 ? "animate-ascend" : ""}
+      `}
+      >
         {FRAMES[frameIndex] || FRAMES[FRAMES.length]}
       </pre>
-      {particles.map((p, i) => (
-        <div
-          key={i}
-          className="absolute w-1 h-1 bg-yellow-500 rounded-full animate-particle"
-          style={{
-            left: `${p.x}%`,
-            bottom: `${p.y}%`,
-            animationDuration: `${p.speed}s`
-          }}
-        />
-      ))}
     </div>
   );
 };

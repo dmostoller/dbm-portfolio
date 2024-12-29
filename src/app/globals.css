@@ -5,7 +5,10 @@
 :root {
   --theme-green: #32cd32;
   --theme-amber: #ffb000;
-  --theme-blue: #4169e1;
+  --theme-blue: #2f60f3;
+  --theme-purple: #a700f5;
+  --theme-maroon: #d53600;
+  --theme-teal: #00c8a0;
   --theme-light-bg: #f5f5f4;
   --theme-light-text: #0c0a09;
   --theme-dark-bg: #0c0a09;
@@ -20,6 +23,7 @@
   --terminal-color: var(--theme-light-text);
   --button-bg: var(--theme-light-button);
   --theme-bg: var(--theme-light-bg);
+  --theme-highlight: var(--theme-amber);
   background-color: var(--theme-light-bg);
   color: var(--theme-light-text);
 }
@@ -29,6 +33,7 @@
     --terminal-color: var(--theme-dark-text);
     --button-bg: var(--theme-dark-button);
     --theme-bg: var(--theme-dark-bg);
+    --theme-highlight: var(--theme-amber);
     background-color: var(--theme-dark-bg);
     color: var(--theme-dark-text);
   }
@@ -38,6 +43,7 @@
   --terminal-color: var(--theme-green);
   --button-bg: var(--theme-dark-button);
   --theme-bg: var(--theme-dark-bg);
+  --theme-highlight: var(--theme-purple);
   background-color: var(--theme-dark-bg);
 }
 
@@ -45,6 +51,7 @@
   --terminal-color: var(--theme-amber);
   --button-bg: var(--theme-dark-button);
   --theme-bg: var(--theme-dark-bg);
+  --theme-highlight: var(--theme-maroon);
   background-color: var(--theme-dark-bg);
 }
 
@@ -52,6 +59,7 @@
   --terminal-color: var(--theme-blue);
   --button-bg: var(--theme-dark-button);
   --theme-bg: var(--theme-dark-bg);
+  --theme-highlight: var(--theme-teal);
   background-color: var(--theme-dark-bg);
 }
 

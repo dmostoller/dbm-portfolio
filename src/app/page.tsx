@@ -1,16 +1,23 @@
 "use client";
-import { useState } from "react";
+import React, { useState, JSX } from "react";
 import CommandPrompt from "@/components/CommandPrompt";
 import { projects } from "@/data/projects";
 import RocketAnimation from "@/components/RocketAnimation";
 
-const WELCOME_MESSAGE = `
-Welcome to my software engineering portfolio
-Type 'help' for available commands
-`;
+const WELCOME_MESSAGE = (
+  <>
+    Welcome to my{" "}
+    <span className="text-[var(--theme-highlight)]">
+      software engineering portfolio
+    </span>
+    {"\nType 'help' for available commands"}
+  </>
+);
 
 export default function Home() {
-  const [output, setOutput] = useState<string[]>([WELCOME_MESSAGE]);
+  const [output, setOutput] = useState<(string | JSX.Element)[]>([
+    WELCOME_MESSAGE,
+  ]);
 
   const handleCommand = (command: string) => {
     if (command === "clear") {
@@ -34,11 +41,7 @@ export default function Home() {
 
   return (
     <main className="bg-terminal-color font-dos min-h-screen max-w-3xl mx-auto p-4">
-      <div className="text-center">
-        <RocketAnimation />
-      </div>
-
-      <div className="space-y-4 mb-8">
+      <div className="space-y-4 mb-8 mt-28">
         {output.map((line, i) => (
           <div key={i} className="font-dos whitespace-pre-wrap">
             {line}
@@ -46,6 +49,9 @@ export default function Home() {
         ))}
       </div>
       <CommandPrompt onCommand={handleCommand} />
+      <div className="text-center mt-16">
+        <RocketAnimation />
+      </div>
     </main>
   );
 }
