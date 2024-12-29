@@ -1,8 +1,12 @@
 "use client";
 
 import { Drawer } from "vaul";
+import { useState } from "react";
+import Email from "./Email";
 
 const SocialLinks = () => {
+  const [showEmailModal, setShowEmailModal] = useState(false);
+
   const SocialLinksContent = () => (
     <div className="max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto p-2 sm:p-3 md:p-4">
       <div className="grid grid-cols-1 lg:grid-cols-6 font-dos">
@@ -46,12 +50,12 @@ const SocialLinks = () => {
         >
           [CALENDLY]
         </a>
-        <a
-          href="mailto:dave.mostoller.dev@gmail.com"
+        <button
+          onClick={() => setShowEmailModal(true)}
           className="hover:bg-[var(--button-bg)] hover:text-terminal-color text-md sm:text-base py-2 sm:py-2 text-center"
         >
-          [EMAIL]
-        </a>
+          [CONTACT]
+        </button>
       </div>
     </div>
   );
@@ -79,6 +83,7 @@ const SocialLinks = () => {
       <footer className="fixed bottom-0 left-0 right-0 bg-[var(--theme-bg)] z-10 hidden lg:block">
         <SocialLinksContent />
       </footer>
+      <Email isOpen={showEmailModal} onClose={() => setShowEmailModal(false)} />
     </>
   );
 };
