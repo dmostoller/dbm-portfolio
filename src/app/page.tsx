@@ -1,8 +1,8 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import CommandPrompt from "@/components/CommandPrompt";
 import { projects } from "@/data/projects";
-import RocketAnimation from '@/components/RocketAnimation';
+import RocketAnimation from "@/components/RocketAnimation";
 
 const WELCOME_MESSAGE = `
 Welcome to my portfolio
@@ -12,23 +12,23 @@ Type 'help' for available commands
 export default function Home() {
   const [output, setOutput] = useState<string[]>([WELCOME_MESSAGE]);
 
-
   const handleCommand = (command: string) => {
-    if (command === 'clear') {
+    if (command === "clear") {
       setOutput([WELCOME_MESSAGE]);
-    } else if (command === 'dir') {
-      setOutput(prev => [...prev, 
-        'Directory of C:\\PROJECTS', 
-        '------------------------', 
-        '',
-        ...projects.map(p => 
-          `${p.title.padEnd(30)} <DIR>          ${p.stack.join(', ')}`
+    } else if (command === "dir") {
+      setOutput((prev) => [
+        ...prev,
+        "Directory of C:\\PROJECTS",
+        "------------------------",
+        "",
+        ...projects.map(
+          (p) => `${p.title.padEnd(30)} <DIR>          ${p.stack.join(", ")}`,
         ),
-        '',
-        `${projects.length} Project(s)`
+        "",
+        `${projects.length} Project(s)`,
       ]);
     } else {
-      setOutput(prev => [...prev, command]);
+      setOutput((prev) => [...prev, command]);
     }
   };
 
@@ -40,7 +40,9 @@ export default function Home() {
 
       <div className="space-y-4 mb-8">
         {output.map((line, i) => (
-          <div key={i} className="font-dos whitespace-pre-wrap">{line}</div>
+          <div key={i} className="font-dos whitespace-pre-wrap">
+            {line}
+          </div>
         ))}
       </div>
       <CommandPrompt onCommand={handleCommand} />

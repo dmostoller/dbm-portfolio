@@ -7,9 +7,9 @@ const AboutMe: FC = () => {
   const [showBikePhoto, setShowBikePhoto] = useState(false);
 
   return (
-    <section className="max-w-5xl mx-auto p-4 bg-terminal-color font-dos">
-      <div className="ascii-border mb-4 hidden md:block text-center">
-       ║ ABOUT ME ║
+    <section className="max-w-5xl mx-auto p-4 bg-terminal-color font-dos min-h-screen">
+      <div className="ascii-border mb-4 hidden md:block text-center text-lg font-bold">
+        ABOUT ME
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
@@ -22,21 +22,20 @@ const AboutMe: FC = () => {
               priority
             />
           </div>
-          <div className="p-4">
-            <h2 className="text-lg font-semibold">Education</h2>
-            <h3 className="text-md font-medium">
-              Wesleyan University | Flatiron School
-            </h3>
+          <div className="p-4 hidden md:block">
+            <h2 className="font-semibold">Education</h2>
+            <h3>Wesleyan University | Flatiron School</h3>
           </div>
         </div>
-        <div className="space-y-4">
-          <p className="leading-relaxed">
+        <div>
+          <h2 className="font-semibold block md:hidden">About Me</h2>
+          <p className="leading-relaxed mb-6">
             Full-stack software engineer specializing in modern web technologies
             and distributed systems. Currently building with TypeScript, React,
             Next.js, and Node.js. Background in audio engineering and music
             technology.
           </p>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed mb-12">
             In my free time you can catch me exploring Philly on my{" "}
             <span
               className="text-violet-500 cursor-pointer"
@@ -47,10 +46,7 @@ const AboutMe: FC = () => {
             </span>{" "}
             or enjoying a good sci-fi book.
           </p>
-          <p className="mt-6 mb-2">C:\{">"} DIR SKILLS</p>
-          <section className="mb-12">
-            <div className="grid gap-4"></div>
-          </section>
+          <p className="font-semibold mb-2">C:\{">"} DIR SKILLS</p>
           <ul className="space-y-2 pl-4">
             <li className="flex items-center">► TypeScript/JavaScript</li>
             <li className="flex items-center">► React.js/Next.js</li>
@@ -62,6 +58,10 @@ const AboutMe: FC = () => {
             <li className="flex items-center">► CI/CD & DevOps</li>
             <li className="flex items-center">► Git/GitHub/Jest/Figma</li>
           </ul>
+          <div className="mt-12 block md:hidden">
+            <h2 className="font-semibold">Education</h2>
+            <h3>Wesleyan University | Flatiron School</h3>
+          </div>
         </div>
       </div>
     </section>
