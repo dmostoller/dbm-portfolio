@@ -5,17 +5,23 @@ import { useParticles } from "@/context/ParticleContext";
 const PARTICLE_COUNT = 50;
 
 export default function ParticleRenderer() {
-  const { particles, setParticles } = useParticles();
+  const { particles, setParticles, showParticles } = useParticles();
 
   useEffect(() => {
-    setParticles(
-      Array.from({ length: PARTICLE_COUNT }, () => ({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        speed: 0.5 + Math.random() * 2,
-      })),
-    );
-  }, [setParticles]);
+    if (showParticles) {
+      setParticles(
+        Array.from({ length: PARTICLE_COUNT }, () => ({
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          speed: 0.5 + Math.random() * 2,
+        })),
+      );
+    } else {
+      setParticles([]);
+    }
+  }, [setParticles, showParticles]);
+
+  if (!showParticles) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none">

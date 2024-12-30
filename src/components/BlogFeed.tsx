@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Error from "./Error";
+import { useParticles } from "@/context/ParticleContext";
 
 interface FeedItem {
   title: string;
@@ -14,6 +15,7 @@ const BlogFeed = () => {
   const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { setShowParticles } = useParticles();
 
   useEffect(() => {
     const fetchFeed = async () => {
@@ -55,6 +57,11 @@ const BlogFeed = () => {
 
     fetchFeed();
   }, []);
+
+  useEffect(() => {
+    setShowParticles(false);
+    return () => setShowParticles(true); // Restore particles when component unmounts
+  }, [setShowParticles]);
 
   if (isLoading) return <Loading message="Fetching blog posts..." />;
   if (error) return <Error message={error} code="FEED_ERR" />;

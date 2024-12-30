@@ -6,6 +6,8 @@ type ParticleContextType = {
   setParticles: (
     particles: Array<{ x: number; y: number; speed: number }>,
   ) => void;
+  showParticles: boolean;
+  setShowParticles: (show: boolean) => void;
 };
 
 const ParticleContext = createContext<ParticleContextType | undefined>(
@@ -16,9 +18,12 @@ export function ParticleProvider({ children }: { children: React.ReactNode }) {
   const [particles, setParticles] = useState<
     Array<{ x: number; y: number; speed: number }>
   >([]);
+  const [showParticles, setShowParticles] = useState(true); // Add this
 
   return (
-    <ParticleContext.Provider value={{ particles, setParticles }}>
+    <ParticleContext.Provider
+      value={{ particles, setParticles, showParticles, setShowParticles }}
+    >
       {children}
     </ParticleContext.Provider>
   );
