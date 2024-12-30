@@ -155,8 +155,8 @@ const Email = ({ isOpen, onClose }: EmailModalProps) => {
                   type="submit"
                   disabled={loading}
                   className={`w-full border border-[var(--terminal-color)] p-2 font-dos
-          hover:bg-[var(--terminal-color)] hover:text-[var(--theme-bg)] transition-colors
-          ${loading ? "animate-pulse" : ""}`}
+                    hover:bg-[var(--terminal-color)] hover:text-[var(--theme-bg)] transition-colors
+                    ${loading ? "animate-pulse" : ""}`}
                 >
                   {loading ? "SENDING..." : "SEND MESSAGE"}
                 </button>

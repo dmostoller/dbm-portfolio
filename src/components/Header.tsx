@@ -60,7 +60,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; HOME.EXE
+              [HOME]
             </Link>
             <Link
               href="/about"
@@ -71,7 +71,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; ABOUT.TXT
+              [ABOUT]
             </Link>
             <Link
               href="/blog"
@@ -82,7 +82,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; BLOG.DIR
+              [BLOG]
             </Link>
             <Link
               href="/projects"
@@ -93,7 +93,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; PROJECTS.DIR
+              [PROJECTS]
             </Link>
             <Link
               href="/resume"
@@ -104,7 +104,7 @@ const Header = () => {
                   : "hover:bg-[var(--button-bg)]"
               }`}
             >
-              C:\\&gt; RESUME.PDF
+              [RESUME]
             </Link>
           </nav>
           <button
@@ -114,11 +114,6 @@ const Header = () => {
             [X]
           </button>
         </div>
-
-        {/* <div className="hidden md:flex ascii-border text-base md:text-xl xl:text-xl justify-left items-center">
-          <Image src="/images/dm3.png" alt="David Mostoller" className="object-cover border border-black" height={50} width={200}/>
-        </div> */}
-
         <nav className="hidden lg:flex flex-wrap justify-between gap-4 px-2 max-w-screen-lg mx-auto">
           <Link href="/">
             <Image
@@ -136,16 +131,6 @@ const Header = () => {
               width={240}
             />
           </Link>
-          {/* <Link
-            href="/"
-            className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
-              pathname === "/"
-                ? "bg-[var(--button-bg)]"
-                : "hover:bg-[var(--button-bg)] hover:text-terminal-color"
-            }`}
-          >
-            [HOME]
-          </Link> */}
           <Link
             href="/about"
             className={`px-6 py-1 sm:py-2 text-sm sm:text-base ${
