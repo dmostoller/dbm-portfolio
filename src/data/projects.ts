@@ -11,6 +11,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "windpallete",
+    title: "WindPallete",
+    description:
+      "An open-source Tailwind CSS color theme builder that helps developers create beautiful, consistent themes with advanced palette generation, real-time previews, and easy export options.",
+    stack: ["Next.js", "TypeScript", "TailwindCSS", "React", "Redis"],
+    links: {
+      demo: "https://www.windpalette.com/",
+      github: "https://github.com/dmostoller/windpallete",
+    },
+  },
+  {
     id: "ai-resume-analyzer",
     title: "AI Resume Analyzer",
     description:
