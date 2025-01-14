@@ -60,7 +60,7 @@ const BlogFeed = () => {
 
   useEffect(() => {
     setShowParticles(false);
-    return () => setShowParticles(true); // Restore particles when component unmounts
+    return () => setShowParticles(true); 
   }, [setShowParticles]);
 
   if (isLoading) return <Loading message="Fetching blog posts..." />;
