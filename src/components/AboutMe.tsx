@@ -21,9 +21,23 @@ const AboutMe: FC = () => {
               priority
             />
           </div>
-          <div className="p-4 hidden md:block">
+          <div className="px-4 pt-4 hidden md:block">
             <h2 className="font-semibold mb-1">Education</h2>
             <h3>Wesleyan University | Flatiron School</h3>
+          </div>
+          <div className="px-4 py-2 hidden md:block">
+            <h2 className="font-semibold mb-1">Work</h2>
+            <h3>
+              Currently engineering solutions @{" "}
+              <a
+                href="https://corporate.comcast.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4 font-dos hover:text-amber-500 cursor-pointer"
+              >
+                Comcast
+              </a>
+            </h3>
           </div>
         </div>
         <div>
@@ -34,7 +48,7 @@ const AboutMe: FC = () => {
             </span>{" "}
             who believes that the design of impactful web technologies emerges
             from iterative, team collaborations. I&apos;m currently building
-            with TypeScript, React, Next.js, and Node.js.
+            with TypeScript, React, Next.js, and Python.
           </p>
           <p className="leading-relaxed mb-6">
             I have a background in audio engineering and music technology, and
